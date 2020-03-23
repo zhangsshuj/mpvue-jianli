@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/index/main",
+    "pages/logs/main",
+    "pages/counter/main"
+  ],
+  "requiredBackgroundModes": ["audio"],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "张树军个人简历",
+    "navigationBarTextStyle": "black"
+  }
+}
