@@ -2,86 +2,86 @@
   <div class="item1 item">
   <div class="page-section page-section-spacing swiper">
     <swiper style="height: 100vh" :circular="true" :vertical="true" indicator-active-color="#fff" :indicator-dots="true" indicator-color="rgba(255,255,255,0.5)">
-        <swiper-item>
-          <div class="content">
+      <swiper-item>
+        <div class="content">
+        <img class="m1" src="../../../static/images/item/1/1573191754662.png" alt="">
+        <img class="m2" src="../../../static/images/item/1/1573202424677.png" alt="">
+        <img class="m3" src="../../../static/images/item/1/1573199175927.gif" alt="">
+        <img class="m4" src="../../../static/images/item/1/1573199287528.png" alt="">
+        <div class="m5"></div>
+        <img class="m6" src="../../../static/images/item/1/1573202280896.png" alt="">
+        <img class="m7" src="../../../static/images/item/1/1573202280154.png" alt="">
+        <img class="m8" src="../../../static/images/item/1/1573198707529.gif" alt="">
+        <img class="m10" src="../../../static/images/item/1/1573199895762.png" alt="">
+        <img class="m11" src="../../../static/images/item/1/1573199895762.png" alt="">
+        </div>
+        <img class="m9" src="../../../static/images/item/1/1573191565856.png" alt="">
+      </swiper-item>
+      <swiper-item>
+        <div class="content list2">
           <img class="m1" src="../../../static/images/item/1/1573191754662.png" alt="">
           <img class="m2" src="../../../static/images/item/1/1573202424677.png" alt="">
           <img class="m3" src="../../../static/images/item/1/1573199175927.gif" alt="">
-          <img class="m4" src="../../../static/images/item/1/1573199287528.png" alt="">
-          <div class="m5"></div>
-          <img class="m6" src="../../../static/images/item/1/1573202280896.png" alt="">
-          <img class="m7" src="../../../static/images/item/1/1573202280154.png" alt="">
+          <img class="avator" src="../../../static/images/item/1/zsj.png" alt="">
+          <div class="gerenjianjie">
+             <div class="left">
+                <div>
+                  <span>张树军</span>
+                  <img src="https://file.rrxh5.cc/g2/c1/2019/11/08/1573207955583.png@!user_image_700x1" alt="">
+                </div>
+                 <div>
+                   <span>1992.03.19</span>
+                   <img src="https://file.rrxh5.cc/g2/c1/2019/11/08/1573207955274.png@!user_image_700x1" alt="">
+                 </div>
+                 <div @click="goMapFn">
+                   <span>中国 北京</span>
+                   <img class="position" src="https://file.rrxh5.cc/g2/c1/2019/11/08/1573207955570.png@!user_image_700x1" alt="">
+                 </div>
+             </div>
+              <div class="middle">
+                <div class="zfx"></div>
+                <div class="line"></div>
+              </div>
+              <div class="right">
+                <div>
+                  <img src="https://file.rrxh5.cc/g2/c1/2019/11/08/1573207955120.png@!user_image_700x1" alt="">
+                  <span>13522745253</span>
+                </div>
+                <div>
+                  <img src="https://file.rrxh5.cc/g2/c1/2019/11/08/1573207953894.png@!user_image_700x1" alt="">
+                  <span>13522745253</span>
+                </div>
+                <div>
+                  <img src="https://file.rrxh5.cc/g2/c1/2019/11/08/1573207955743.png@!user_image_700x1" alt="">
+                  <span>375002979</span>
+                </div>
+              </div>
+          </div>
+          <div class="gerenjianjie1">
+              <div>
+                <span>毕业院校:</span>
+                <span>忻州师范学院</span>
+              </div>
+            <div>
+              <span>专业:</span>
+              <span>计算机</span>
+            </div>
+          </div>
+          <div class="gerenjianjie2">
+            <span>个人简介</span>
+            <div></div>
+            <span>about me</span>
+          </div>
+          <!--<img class="m4" src="../../../static/images/item/1/1573199287528.png" alt="">-->
+          <!--<div class="m5"></div>-->
+          <!--<img class="m6" src="../../../static/images/item/1/1573202280896.png" alt="">-->
+          <!--<img class="m7" src="../../../static/images/item/1/1573202280154.png" alt="">-->
           <img class="m8" src="../../../static/images/item/1/1573198707529.gif" alt="">
           <img class="m10" src="../../../static/images/item/1/1573199895762.png" alt="">
           <img class="m11" src="../../../static/images/item/1/1573199895762.png" alt="">
-          </div>
-          <img class="m9" src="../../../static/images/item/1/1573191565856.png" alt="">
-        </swiper-item>
-        <swiper-item>
-          <div class="content list2">
-            <img class="m1" src="../../../static/images/item/1/1573191754662.png" alt="">
-            <img class="m2" src="../../../static/images/item/1/1573202424677.png" alt="">
-            <img class="m3" src="../../../static/images/item/1/1573199175927.gif" alt="">
-            <img class="avator" src="../../../static/images/item/1/zsj.png" alt="">
-            <div class="gerenjianjie">
-               <div class="left">
-                  <div>
-                    <span>张树军</span>
-                    <img src="https://file.rrxh5.cc/g2/c1/2019/11/08/1573207955583.png@!user_image_700x1" alt="">
-                  </div>
-                   <div>
-                     <span>1992.03.19</span>
-                     <img src="https://file.rrxh5.cc/g2/c1/2019/11/08/1573207955274.png@!user_image_700x1" alt="">
-                   </div>
-                   <div>
-                     <span>中国 北京</span>
-                     <img src="https://file.rrxh5.cc/g2/c1/2019/11/08/1573207955570.png@!user_image_700x1" alt="">
-                   </div>
-               </div>
-                <div class="middle">
-                  <div class="zfx"></div>
-                  <div class="line"></div>
-                </div>
-                <div class="right">
-                  <div>
-                    <img src="https://file.rrxh5.cc/g2/c1/2019/11/08/1573207955120.png@!user_image_700x1" alt="">
-                    <span>13522745253</span>
-                  </div>
-                  <div>
-                    <img src="https://file.rrxh5.cc/g2/c1/2019/11/08/1573207953894.png@!user_image_700x1" alt="">
-                    <span>13522745253</span>
-                  </div>
-                  <div>
-                    <img src="https://file.rrxh5.cc/g2/c1/2019/11/08/1573207955743.png@!user_image_700x1" alt="">
-                    <span>375002979</span>
-                  </div>
-                </div>
-            </div>
-            <div class="gerenjianjie1">
-                <div>
-                  <span>毕业院校:</span>
-                  <span>忻州师范学院</span>
-                </div>
-              <div>
-                <span>专业:</span>
-                <span>计算机</span>
-              </div>
-            </div>
-            <div class="gerenjianjie2">
-              <span>个人简介</span>
-              <div></div>
-              <span>about me</span>
-            </div>
-            <!--<img class="m4" src="../../../static/images/item/1/1573199287528.png" alt="">-->
-            <!--<div class="m5"></div>-->
-            <!--<img class="m6" src="../../../static/images/item/1/1573202280896.png" alt="">-->
-            <!--<img class="m7" src="../../../static/images/item/1/1573202280154.png" alt="">-->
-            <img class="m8" src="../../../static/images/item/1/1573198707529.gif" alt="">
-            <img class="m10" src="../../../static/images/item/1/1573199895762.png" alt="">
-            <img class="m11" src="../../../static/images/item/1/1573199895762.png" alt="">
-          </div>
-          <img class="m9" src="../../../static/images/item/1/1573191565856.png" alt="">
-        </swiper-item>
+        </div>
+        <img class="m9" src="../../../static/images/item/1/1573191565856.png" alt="">
+      </swiper-item>
       <swiper-item>
         <div class="content list3">
           <img class="m1" src="../../../static/images/item/1/1573191754662.png" alt="">
@@ -415,14 +415,25 @@ export default {
     }
   },
   methods: {
+    goMapFn () {
+      wx.navigateTo({url: '/pages/map/main?map=123'})
+    },
     callFn () {
       wx.makePhoneCall({
         phoneNumber: '13522745253',
         success: function () {
-          console.log('拨打电话成功！')
+          wx.showToast({
+            title: '拨打电话成功',
+            icon: 'success',
+            duration: 2000
+          })
         },
         fail: function () {
-          console.log('拨打电话失败！')
+          wx.showToast({
+            title: '拨打电话失败',
+            icon: 'success',
+            duration: 2000
+          })
         }
       })
     },
@@ -452,12 +463,21 @@ export default {
     this.initTask()
   },
   mounted () {
-    console.log('he')
   }
 }
 </script>
 
 <style>
+  .input{
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.63);
+    color: rgba(255, 255, 255, 0.69);
+    border: none;
+    top: 0px;
+    padding: 0 20px;
+  }
   .item1{
     background: rgb(0, 0, 0);
     height: 100vh;
@@ -964,5 +984,19 @@ export default {
     border-radius: 5px;
     margin-left: 32px;
     margin-top: 32px;
+  }
+  .position{
+    -webkit-animation: poi 1.5s infinite ease-in-out;
+  }
+  @keyframes poi {
+    0%{
+      transform: scale(0.5);
+    }
+    50%{
+      transform: scale(1);
+    }
+    100%{
+      transform: scale(0.5);
+    }
   }
 </style>
