@@ -26,6 +26,12 @@ export default {
   },
   log () {
     console.log(`log at:${Date.now()}`)
+  },
+  onLaunch() {
+    console.log('onLaunchon')
+  },
+  onShow() {
+    console.log('onShow')
   }
 }
 </script>

@@ -16,6 +16,8 @@
         <img class="m11" src="../../../static/images/item/1/1573199895762.png" alt="">
         </div>
         <img class="m9" src="../../../static/images/item/1/1573191565856.png" alt="">
+        <img @click="goHhef" class="ava" :src="userInfo.avatarUrl" alt="">
+        <span class="ava-txt">{{userInfo.nickName}}</span>
       </swiper-item>
       <swiper-item>
         <div class="content list2">
@@ -403,6 +405,14 @@
       <div :class="[isOff ? 'music-on' : 'music-off']"></div>
     </div>
     <div class="arrow-down"></div>
+    <div class="alert" v-if="isAlert">
+      <p class="tit">是否允许授权</p>
+      <div class="btn">
+        <!--<span>取消</span>-->
+        <button :plain="true" class="btn" open-type="getUserInfo" type="primary" @getuserinfo="bindGetUserInfo">授权</button>
+      </div>
+    </div>
+    <div class="mask" v-if="isMask" @click="authFn"></div>
   </div>
 </template>
 
@@ -410,11 +420,21 @@
 export default {
   data () {
     return {
+      isMask: true,
+      isAlert: true,
       isOff: true,
-      audio: {}
+      audio: {},
+      userInfo: {}
     }
   },
   methods: {
+    authFn() {
+      this.isAlert=false;
+      this.isMask=false
+    },
+    goHhef() {
+      wx.reLaunch({url: '/pages/webview/main'})
+    },
     goMapFn () {
       wx.navigateTo({url: '/pages/map/main?map=123'})
     },
@@ -455,12 +475,81 @@ export default {
       this.audio.singer = '多米'
       this.audio.controls = false
       this.audio.coverImgUrl = 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000'
+    },
+    bindGetUserInfo(e) {
+      if (e.mp.detail.userInfo) {
+        this.userInfo = e.mp.detail.userInfo
+        this.userInfo.nickName = e.mp.detail.userInfo.nickName.substr(-2)
+        this.isMask = false
+        this.isAlert = false
+      } else {
+        this.isMask = true
+        this.isAlert = true
+        //用户按了拒绝按钮
+        console.log('用户按了拒绝按钮');
+      }
+    },
+    init() {
+//      wx.checkSession({
+//        success (res) {
+//          console.log(0)
+//          wx.login({
+//            success(res1) {
+//              console.log(res1)
+//              wx.request({
+//                method: 'post',
+//                url: 'https://dev-gateway.bicai365.com/auth/wechat/signature',
+//                data: {
+//                  url: 'https%3A%2F%2Fdev-gateway.bicai365.com'
+//                },
+//                success(res2) {
+//                  console.log(2)
+//                  console.log(res2)
+//                },
+//                fail(res2) {
+//                  console.log(3)
+//                  console.log(res2)
+//                }
+//              })
+//            },
+//            fail() {
+//
+//            }
+//          })
+//          console.log(res)
+//          //session_key 未过期，并且在本生命周期一直有效
+//        },
+//        fail (res) {
+//          console.log(1)
+//          console.log(res)
+//          // session_key 已经失效，需要重新执行登录流程
+//          wx.login() //重新登录
+//        }
+//      })
+//      let that = this
+//      wx.getSetting({
+//        success: function(res){
+//          if (res.authSetting['scope.userInfo']) {
+//            console.log('用户已授权过')
+//            wx.getUserInfo({
+//              success(res) {
+//                console.log(res)
+//                that.userInfo = res.userInfo
+//                that.userInfo.nickName = res.userInfo.nickName.substr(-2)
+//              }
+//            })
+//          }else{
+//            console.log('用户还未授权过')
+//          }
+//        }
+//      })
     }
   },
   created () {
     console.log('show')
     console.log(this.isShow)
     this.initTask()
+    this.init()
   },
   mounted () {
   }
@@ -468,6 +557,39 @@ export default {
 </script>
 
 <style>
+  .ava{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    z-index: 10001;
+    top: 100px;
+    border-radius: 50%;
+    left: 140px;
+    opacity: 0.7;
+    animation: rote 2s ease-out infinite;
+  }
+  .ava-txt{
+    width: 100%;
+    position: absolute;
+    z-index: 10003;
+    top: 130px;
+    border-radius: 50%;
+    left: 160px;
+    color:#fff;
+    font-size: 30px;
+    opacity: 0.8;
+  }
+  @keyframes rote {
+    0%{
+      transform: rotate(0deg);
+    }
+    50%{
+      transform: rotate(180deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+  }
   .input{
     position: fixed;
     width: 100%;
@@ -998,5 +1120,50 @@ export default {
     100%{
       transform: scale(0.5);
     }
+  }
+  .alert{
+    width: 70%;
+    height: 100px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10000;
+    background: rgba(255, 255, 255, 0.9);
+    text-align: center;
+  }
+  .alert .tit{
+    margin: 20px 0;
+  }
+  .alert .btn{
+    display: inline-flex;
+    border: 1px solid #000;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 100000;
+  }
+  .alert .btn span{
+    display: inline-block;
+    line-height: 40px;
+    border-right: 1px solid #000;
+    height: 40px;
+    font-size: 16px;
+  }
+  .alert .btn button{
+    display: inline-block;
+    height: 40px;
+    border: none;
+    font-size: 16px;
+  }
+  .mask{
+    position: fixed;
+    left:0px;
+    top:0px;
+    bottom: 0px;
+    right:0px;
+    background: rgba(0, 0, 0, 0.73);
+    z-index: 1000;
   }
 </style>
